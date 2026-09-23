@@ -1,0 +1,17 @@
+<template>
+    <h2>Hello Salesforce</h2>
+    <template for:each={opportunties} for:item="opps">
+        <lightning-card key={opps.Id}>
+            <div class="slds-p-around_medium">
+                <p>Name: <strong>{opps.Name}</strong></p>
+                <p>Amount: <strong>{opps.Amount}</strong></p>
+                <p>Probability: <strong>{opps.Probability}</strong></p>
+                <p>Expected Revenue Overridden: <strong>{opps.Expected_Revenue_Overridden__c}</strong></p>
+            </div>
+            <div>
+                <lightning-button label="Set Expected Revenue" data-id={opps.Id} onclick={handleExpectedRevenue}></lightning-button>
+            </div>
+        </lightning-card>
+
+    </template>
+</template>
